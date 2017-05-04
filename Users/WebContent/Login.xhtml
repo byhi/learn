@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>Demo Web</title>
+</h:head> 
+<h:body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <h:form class="navbar-form navbar-right">
+            <div class="form-group">
+              <h:inputText value="#{user.name}" styleClass="form-control"/>
+            </div>
+            <div class="form-group">
+              <h:inputText value="#{user.pass}" styleClass="form-control"/>
+              <h:commandButton action="Welcome" value="Login" styleClass="btn btn-default"/>
+              <h:commandButton action="Reg" value="Sign in" styleClass="btn btn-default"/>
+            </div>
+            
+          </h:form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+<div class="jumbotron">  
+ <div class="container">
+		<!-- div class="navbar navbar-inverse">
+			<div class="navbar-brand">
+				Referencia oldal
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="col-xs-12">
+				<h:form styleClass="form-horizontal">
+				
+					<div class="form-group">
+						<br></br>
+					</div>
+					
+					<div class="form-group">
+						<h:outputLabel value="User Name" styleClass="control-label col-sm-2"/>
+						<div class="col-sm-10">
+							<h:inputText value="#{user.name}" styleClass="form-control"/>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<h:outputLabel value="Password" styleClass="control-label col-sm-2"/>
+						<div class="col-sm-10">
+							<h:inputText value="#{user.pass}" styleClass="form-control"/>
+							<h:commandButton action="Welcome" value="Login" styleClass="btn btn-default"/>	
+						</div>
+					</div>				
+				</h:form>
+	        </div>
+		</div>
+	</div>	
+	</div>
+  			
+    <!-- <h1>JSF 2.2 CDI Managed Bean</h1> -->
+
+    <!-- <h:form>
+    
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Név" for="name"/>
+            <h:inputText id="name" value="#{user.name}"/>
+
+            <h:outputLabel value="Jelszó" for="pass"/>
+            <h:inputText id="pass" value="#{user.pass}"/>
+            <h:commandButton action="Welcome" value="Welcome"/>
+        </h:panelGrid>
+    </h:form>-->
+
+</h:body>
+
+</html>
