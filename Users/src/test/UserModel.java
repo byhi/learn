@@ -12,7 +12,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.imageio.ImageIO;
-
+/**i do something*/
 @ManagedBean(name="UserModel")
 @RequestScoped
 public class UserModel {
