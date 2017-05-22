@@ -5,5 +5,37 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
     version="2.1">
-
+    
+	<navigation-rule>
+	   <from-view-id>/Login.xhtml</from-view-id>
+	  <navigation-case>
+	  	<from-outcome>reg</from-outcome>
+	  	 <to-view-id>/Reg.xhtml</to-view-id>
+	   </navigation-case>
+	   <navigation-case>
+	  	<from-outcome>welcome</from-outcome>
+	  	 <to-view-id>/Welcome.xhtml</to-view-id>
+	   </navigation-case>
+	    <navigation-case>
+	  	<from-outcome>fail</from-outcome>
+	  	 <to-view-id>/Error.xhtml</to-view-id>
+	   </navigation-case>
+	  </navigation-rule>
+	  
+	  <navigation-rule>  
+	   <from-view-id>/Reg.xhtml</from-view-id>
+	  <navigation-case>
+	  	<from-outcome>success</from-outcome>
+	  	 <to-view-id>/Login.xhtml</to-view-id>
+	   </navigation-case>
+	  </navigation-rule>
+	  
+	    <navigation-rule>  
+	   <from-view-id>/Welcome.xhtml</from-view-id>
+	  <navigation-case>
+	  	<from-outcome>smith</from-outcome>
+	  	 <to-view-id>/Smith.xhtml</to-view-id>
+	   </navigation-case>
+	  </navigation-rule>
+  
 </faces-config>

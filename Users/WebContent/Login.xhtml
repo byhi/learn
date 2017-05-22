@@ -9,9 +9,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
 	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
-	<title>Demo Web</title>
+	<title>KM support</title>
 </h:head> 
 <h:body>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -29,39 +30,29 @@
               <h:inputText value="#{user.name}" styleClass="form-control"/>
             </div>
             <div class="form-group">
-              <h:inputText value="#{user.pass}" styleClass="form-control"/>
-              <h:commandButton action="Welcome" value="Login" styleClass="btn btn-default"/>
-              <h:commandButton action="Reg" value="Sign in" styleClass="btn btn-default"/>
-            </div>
-            
+              <h:inputSecret replay="false" value="#{user.pass}" styleClass="form-control"/>
+              <h:commandButton action="#{login.send(user.name,user.pass)}" value="Login" styleClass="btn btn-default"/>
+              <h:commandButton action="#{reg.creat}" value="Sign in" styleClass="btn btn-default"/>
+            </div>           
           </h:form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
 <div class="jumbotron">  
  <div class="container">
-		<!-- div class="navbar navbar-inverse">
-			<div class="navbar-brand">
-				Referencia oldal
-			</div>
-		</div> -->
 		<div class="row">
 			<div class="col-xs-12">
-				<h:form styleClass="form-horizontal">
-				
+				<h:form styleClass="form-horizontal">				
 					<div class="form-group">
 						<br></br>
-					</div>
-					
+					</div>					
 					<div class="form-group">
 						<h:outputLabel value="User Name" styleClass="control-label col-sm-2"/>
 						<div class="col-sm-10">
 							<h:inputText value="#{user.name}" styleClass="form-control"/>
 						</div>
-					</div>
-					
-					<div class="form-group">
+					</div>				
+					<div class="form-group">					
 						<h:outputLabel value="Password" styleClass="control-label col-sm-2"/>
 						<div class="col-sm-10">
 							<h:inputText value="#{user.pass}" styleClass="form-control"/>
@@ -73,21 +64,6 @@
 		</div>
 	</div>	
 	</div>
-  			
-    <!-- <h1>JSF 2.2 CDI Managed Bean</h1> -->
-
-    <!-- <h:form>
-    
-        <h:panelGrid columns="2">
-            <h:outputLabel value="Név" for="name"/>
-            <h:inputText id="name" value="#{user.name}"/>
-
-            <h:outputLabel value="Jelszó" for="pass"/>
-            <h:inputText id="pass" value="#{user.pass}"/>
-            <h:commandButton action="Welcome" value="Welcome"/>
-        </h:panelGrid>
-    </h:form>-->
-
+	
 </h:body>
-
 </html>

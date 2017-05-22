@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14937181015970" configfile="/Users/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14937181015970" configfile="/Users/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" id="pf149389195427314" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf149389195427315 pf149389195427316 pf149389195427317" inlinks="pf149389195427318" path="/Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Reg.xhtml" id="pf149389195427319" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf149389195427318" inlinks="pf149389195427315" path="/Reg.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Welcome.xhtml" id="pf149389195427320" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14939269643420" inlinks="pf149389195427316" path="/Welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Error.xhtml" id="pf149389195427321" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf149389195427317" path="/Error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Smith.xhtml" id="pf14939269643421" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14939269643420" path="/Smith.xhtml"/>
+  <links id="pf149389195427315" target="pf149389195427319" source="pf149389195427314" outcome="reg"/>
+  <links id="pf149389195427316" target="pf149389195427320" source="pf149389195427314" outcome="welcome"/>
+  <links id="pf149389195427317" target="pf149389195427321" source="pf149389195427314" outcome="fail"/>
+  <links id="pf149389195427318" target="pf149389195427314" source="pf149389195427319" outcome="success"/>
+  <links id="pf14939269643420" target="pf14939269643421" source="pf149389195427320" outcome="smith"/>
+</pageflow:Pageflow>

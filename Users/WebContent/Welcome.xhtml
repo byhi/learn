@@ -3,168 +3,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html" 
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 <h:head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
 	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
-	<title>Demo Web</title>
+	<title>KM support</title>
 </h:head> 
 <h:body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">KM vendor</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Hírek</a></li>
-            <li><a href="#about">Galéria</a></li>
-            <li><a href="#about">NPC shop</a></li>
-            <li><a href="#contact">Kapcsolatok</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+<b:container>                                                                                                                    
+        <b:navBar brand="KP's Brand" inverse="true" brandHref="#" fixed="top">                                                       
+            <b:navbarLinks>                                                                                                          
+                <b:navLink value="Hírek" iconAwesome="home" href="#"></b:navLink>                                                     
+                <b:navLink value="KM tavern" iconAwesome="fa fa-fort-awesome" href="#" ></b:navLink>                                                                     
+                <b:navLink value="Kovácsműhely" href="#" url="Smith.xhtml" action="smith"></b:navLink>                                                                    
+                <b:navLink value="Elérhetőségek" href="#"></b:navLink>                                                                      
+            </b:navbarLinks>                                                                                                         
+        </b:navBar>                                                                                                                  
+    </b:container>    
     
-    <div class="jumbotron"> 
+<div class="jumbotron"> 
+	<b:carousel id="parque" style="width:100%;height:500px"  >
+		   <b:carouselItem style="width:100%;height:500px">
+		      <img src="http://allswalls.com/images/dungeonsanddragons-fantasy-adventure-board-rpg-dungeons-dragons-44-wallpaper-1.jpg"  alt="Valladolid" />
+			       <b:carouselCaption>
+	       			<h3>You'll love Valladolid!</h3>
+	       			<p>Szerkeszd meg kedvenc karaktereidet vagy kisérletez vakon.Légy te az őrült varázsló</p>
+	       			 </b:carouselCaption>
+		   </b:carouselItem>
+		   <b:carouselItem style="width:100%;height:500px">
+		      <img src="http://suptg.thisisnotatrueending.com/archive/14000966/images/1298440792948.jpg"  alt="Valladolid"/>
+		      <b:carouselCaption>
+	       			<h3>You'll love Valladolid!</h3>
+	       			<p>Szerkeszd meg kedvenc tárgyaidat vagy kisérletez vakon.Légy te az őrült varázsló</p>
+	       			 </b:carouselCaption>
+		   </b:carouselItem>		
+		   <b:carouselItem style="width:100%;height:500px">
+		      <img src="http://www.artsfon.com/pic/201411/2560x1600/artsfon.com-28273.jpg"  alt="Valladolid"/>
+		      <b:carouselCaption>
+	       			<h3>You'll love Valladolid!</h3>
+	       			<p>Istennek sem könnyű lenni. Teremtsd meg könnyedén a legjobb ellenfeleket.Egy csipet erő és egy lehellet örjöngés.Játszva alkothatsz elenfeleket , majd a játékosok borzongnak</p>
+	       			 </b:carouselCaption>
+		   </b:carouselItem>
+		</b:carousel>
+	</div>
+<div class="jumbotron">
  <div class="container">
   <div class="form-group">
-						<br></br>
-					</div>
-	
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <h:graphicImage value = "http://www.theweem.com/wp-content/uploads/2010/07/theheroes.jpg"/>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <h:graphicImage value = "https://s-media-cache-ak0.pinimg.com/originals/a7/46/dd/a746dd272f4c64105eb8518a5877225a.jpg"/>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-         <h:graphicImage value = "https://learningdm.files.wordpress.com/2011/11/19.jpg"/>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><!-- a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a--></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-
-<div><br> </br></div>
-    <!-- Marketing messaging and featurettes
-    ================================================== >    
-		< div class="navbar navbar-inverse">
-			<div class="navbar-brand">
-				Referencia oldal
-			</div>
-		</div> -->
-		
-		
-		<!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-         <h:graphicImage value = "https://learningdm.files.wordpress.com/2011/11/19.jpg"/> 
-          <h2>Heading</h2>
+         <h:graphicImage value = "https://learningdm.files.wordpress.com/2011/11/19.jpg" class="img-circle" alt="Cinque Terre" width="304" height="304"/> 
+          <h2>Kovácsműhely</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
           <p><a class="btn btn-default" href="#" role="button">View details </a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <h:graphicImage value = "https://learningdm.files.wordpress.com/2011/11/19.jpg"/>
-          <h2>Heading</h2>
+          <h:graphicImage value = "https://s-media-cache-ak0.pinimg.com/originals/f1/14/05/f11405edca28c1e7dde1d2856c624848.jpg" class="img-circle" alt="Cinque Terre" width="304" height="304" />
+          <h2>Karaterek</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
           <p><a class="btn btn-default" href="#" role="button">View details </a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-         <h:graphicImage value = "https://learningdm.files.wordpress.com/2011/11/19.jpg"/>
-          <h2>Heading</h2>
+         <h:graphicImage value = "http://www.jmgariepy.com/wp-content/uploads/2014/07/Alchemical-Items.jpg" class="img-circle" alt="Cinque Terre" width="304" height="304"/>          
+          <h2>Tárgyak</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details </a></p>
+          
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
-
-
-   
-      </div>
-      
-
-</div>
-</div>
-    <!--  <hr class="featurette-divider">
-
-       /END THE FEATURETTES ->
-		
-		
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-    <h:graphicImage value = "resources/images/ggv2.jpg"/>
-      <!- img src="resources/images/ggv2.jpg" alt="">   ->
-      <div class="caption">
-        <h3>Csao, #{empty user.name ? 'Vendég' : user.name} !</h3>
-        <p>Ez az én első probálkozásom...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Többet akarsz tudni?</a></p>
-      </div>
-    </div>
+      </div>    
   </div>
+ </div>
 </div>
-</div>	
-</div-->
-	<!--	<div class="jumbotron">
-		  <h1>Csao, #{empty user.name ? 'Vendég' : user.name} !</h1>
-		  <p>Ez az én első probálkozásom...</p>
-		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Többet akarsz tudni? </a></p>
-		</div>
-    <h1>JSF 2.2 CDI Managed Bean</h1>
-
-    Felhasználó: #{empty user.name ? 'Guest' : user.name}
-     Last name: #{user.pass}-->
-
 </h:body>
 </html>

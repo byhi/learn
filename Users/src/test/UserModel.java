@@ -13,7 +13,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.imageio.ImageIO;
 /**i do something*/
-@ManagedBean(name="UserModel")
+@ManagedBean(name="usermodel")
 @RequestScoped
 public class UserModel {
 private String name;
@@ -67,8 +67,8 @@ public void setImg(Blob img) {
 	this.img = bufferedImage;
 }
 
-public void add() {
-	
+public String add() {
+	System.out.println("Connect to db .... ");
 	try
     {
       // create a mysql database connection
@@ -80,27 +80,38 @@ public void add() {
       
 
       // the mysql insert statement
-      String query = " insert into users (NAME, NICK, PASS, AVATAR)"
-        + " values (?, ?, ?, ?)";
+      String query = " insert into users (NAME, NICK, PASS)"
+        + " values (?, ?, ?)";
 
       // create the mysql insert preparedstatement
       PreparedStatement preparedStmt = conn.prepareStatement(query);
       preparedStmt.setString (1, this.name);
       preparedStmt.setString (2, this.nick);
-      preparedStmt.setString (2, this.passw);
-      preparedStmt.setBlob(4, converttoBlob(this.img));
+      preparedStmt.setString (3, this.passw);
+      //preparedStmt.setBlob(4, converttoBlob(this.img));
 
 
       // execute the preparedstatement
       preparedStmt.execute();
       
+      preparedStmt.close();
       conn.close();
+    System.out.println("------------------------------------");
+  	System.out.println(toString());
+  	System.out.println("COMPLET");
+  	System.out.println("------------------------------------");
     }
     catch (Exception e)
     {
-      System.err.println("Got an exception!");
-      System.err.println(e.getMessage());
+    	System.out.println("------------------------------------");
+    	System.out.println("ERROR \r\n");    	
+	    System.err.println("Got an exception!");     
+	    System.err.println(e.getMessage());
+	    System.out.println("------------------------------------");     
     }
+	
+	System.out.println("Connect finished ");
+	return "success";
 }
 
 private InputStream converttoBlob(BufferedImage bufferedImage)
@@ -115,5 +126,9 @@ private InputStream converttoBlob(BufferedImage bufferedImage)
 	InputStream is = new ByteArrayInputStream(baos.toByteArray());
 	return is;
   }
+@Override
+public String toString() {
+	return "UserModel : \r\n \r\n  name=" + name + " \r\n nick=" + nick + " \r\n passw=" + passw + " \r\n";
+}
 
 }

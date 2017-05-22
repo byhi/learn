@@ -43,7 +43,9 @@ public class UserBean implements Serializable{
 			
 
 		}
-		
+		rs.close();
+		pstmt.close();
+		connect.close();
 		return user;
 	}
 }
